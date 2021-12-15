@@ -147,13 +147,13 @@
     <div class="section container contact">
         <h1 class="title">CONTACT ME</h1>
         <div class="contact-main">
-            <form action="#">
+            <form action="#" onsubmit="return contact(this)">
                 <div class="data">
-                    <input class="input" type="text" placeholder="YOUR NAME">
-                    <input class="input"  type="email" placeholder="YOUR EMAIL">
+                    <input id="name" class="input" type="text" placeholder="YOUR NAME" required>
+                    <input id="email" class="input"  type="email" placeholder="YOUR EMAIL" required>
                 </div>
-                <textarea class="textarea" placeholder="MESSAGE"></textarea>
-                <button class="button icon-button">SEND <i class="fas fa-paper-plane"></i></button>
+                <textarea id="message" class="textarea" placeholder="MESSAGE" required></textarea>
+                <button id="send" class="button icon-button">SEND <i class="fas fa-paper-plane"></i></button>
             </form>
             <h1 class="or">OR</h1>
             <span>Send an email to: <a class="link" href="mailto:analerinc@gmail.com"> analerinc@gmail.com</a></span>

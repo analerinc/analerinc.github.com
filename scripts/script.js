@@ -51,3 +51,37 @@ window.onload = () => {
     changeActiveLink();
     hideArrows();
 }
+
+function contact(form) {
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+
+    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+        alert("Please fill all fields");
+        return false;
+    }
+
+    const data = {
+        name,
+        email,
+        message
+    }
+
+    fetch("http://139.59.157.37:8080/api/contact", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(res => {
+        if (res.status === 201) {
+            alert("Message sent!")
+        } else {
+            alert("Unknown error");
+        }
+        return res.json();
+    });
+
+    return false;
+}
