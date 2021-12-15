@@ -68,7 +68,7 @@ function contact(form) {
         message
     }
 
-    fetch("http://139.59.157.37:8080/api/contact", {
+    fetch("https://jk.qubit.rs/api/contact", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
